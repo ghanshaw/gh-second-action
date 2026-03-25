@@ -1,7 +1,7 @@
 name: deploy-project
 on: push
 jobs:
-  test:
+  testy:
     runs-on: ubuntu-latest
     steps:
       - name: Get code babes
@@ -15,6 +15,7 @@ jobs:
       - name: Run some tests
         run: npm test
   deploy:
+    needs: testy
     runs-on: ubuntu-latest
     steps:
       - name: Get code girly
